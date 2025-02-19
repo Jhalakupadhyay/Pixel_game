@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame_svg/svg.dart';
@@ -26,6 +27,10 @@ class PeckFirst extends PositionComponent
       anchor: Anchor.topLeft,
     );
     add(peckComponent);
+    add(CircleHitbox(
+        radius: height / 2,
+        anchor: Anchor.center,
+        position: Vector2(height / 2, height / 2)));
     debugMode = true;
   }
 
