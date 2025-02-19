@@ -10,12 +10,19 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
-  late Game game;
+  late AirHockeyGame game;
 
   @override
   void initState() {
     super.initState();
     game = AirHockeyGame();
+  }
+
+  @override
+  void reassemble() {
+    // TODO: implement reassemble
+    super.reassemble();
+    game.onReload();
   }
 
   @override

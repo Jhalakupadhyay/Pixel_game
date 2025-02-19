@@ -19,24 +19,23 @@ class PeckFirst extends PositionComponent
     final height = game.size.x * 0.15;
     final width = game.size.x * 0.15;
     size = Vector2(width, height);
-    const anchorCenter = Anchor.center;
-    position = Vector2(0, boardHeight / 2 - height * 1.5);
+    position = Vector2(-height / 2, boardHeight / 2 - height * 2);
     final peckComponent = SvgComponent(
       svg: peck,
       size: size,
-      anchor: anchorCenter,
+      anchor: Anchor.topLeft,
     );
     add(peckComponent);
+    debugMode = true;
   }
 
   @override
   bool containsLocalPoint(Vector2 point) {
-    // Make the entire component area draggable
-    final rect = (size / 2)..negate();
-    return point.x >= rect.x &&
-        point.x <= rect.x + size.x &&
-        point.y >= rect.y &&
-        point.y <= rect.y + size.y;
+    // For topLeft anchor, check relative to origin (0,0)
+    return point.x >= 0 &&
+        point.x <= size.x &&
+        point.y >= 0 &&
+        point.y <= size.y;
   }
 
   @override

@@ -13,4 +13,9 @@ class AirHockeyGame extends FlameGame with HasCollisionDetection {
     world.add(PeckFirst());
     world.add(PeckSecond());
   }
+
+  void onReload() {
+    world.removeAll(world.children);
+    onLoad();
+  }
 }
