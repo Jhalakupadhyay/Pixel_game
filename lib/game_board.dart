@@ -20,7 +20,6 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   void reassemble() {
-    // TODO: implement reassemble
     super.reassemble();
     game.onReload();
   }

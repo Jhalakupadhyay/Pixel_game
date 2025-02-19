@@ -1,3 +1,4 @@
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame_svg/flame_svg.dart';
@@ -25,6 +26,11 @@ class Board extends PositionComponent
       size: size,
       anchor: anchorCenter,
     );
+    add(RectangleHitbox(
+      size: size * 0.895,
+      anchor: anchorCenter,
+    ));
     add(board);
+    debugMode = true;
   }
 }
