@@ -6,6 +6,11 @@ import 'package:jungle_game/airhockey_game.dart';
 
 class Board extends PositionComponent
     with DragCallbacks, HasGameRef<AirHockeyGame> {
+  final double hitboxWidthFactor;
+  final double hitboxHeightFactor;
+
+  Board({this.hitboxWidthFactor = 0.9, this.hitboxHeightFactor = 0.86});
+
   @override
   Future<void> onLoad() async {
     final sprite = await Svg.load('images/BOARD.svg');
@@ -26,8 +31,14 @@ class Board extends PositionComponent
       size: size,
       anchor: anchorCenter,
     );
+
+    final hitboxSize = Vector2(
+      size.x * hitboxWidthFactor,
+      size.y * hitboxHeightFactor,
+    );
+
     add(RectangleHitbox(
-      size: size * 0.895,
+      size: hitboxSize,
       anchor: anchorCenter,
     ));
     add(board);

@@ -64,7 +64,15 @@ class PeckFirst extends PositionComponent
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
     if (other is Board) {
-      logger.d('Collided with Board');
+      if (position.y >= BoardConfig.boardHeight / 2.5 - height) {
+        position.y -= 10;
+      }
+      if (position.x <= -BoardConfig.boardWidth / 2 + width) {
+        position.x += 10;
+      }
+      if (position.x >= BoardConfig.boardWidth / 2 - width * 1.5) {
+        position.x -= 10;
+      }
     }
   }
 }
