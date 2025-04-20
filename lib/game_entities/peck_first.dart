@@ -53,12 +53,15 @@ class PeckFirst extends PositionComponent
   @override
   void onDragUpdate(DragUpdateEvent event) {
     super.onDragUpdate(event);
-    if (position.y > 0) {
-      position += event.localDelta;
-    } else if (event.localDelta.y >= 0 &&
-        (event.localDelta.x > 0 || event.localDelta.x < 0)) {
-      position += event.localDelta;
-    }
+    final double minx = -BoardConfig.boardWidth / 2.2;
+    final double maxx = BoardConfig.boardWidth / 2.2;
+    final double maxy = BoardConfig.boardHeight / 3 + 10;
+    const double miny = 0;
+    position += event.localDelta;
+    position = Vector2(
+      position.x.clamp(minx, maxx),
+      position.y.clamp(miny, maxy),
+    );
   }
 
   @override

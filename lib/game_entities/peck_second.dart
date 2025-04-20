@@ -54,12 +54,15 @@ class PeckSecond extends PositionComponent
   @override
   void onDragUpdate(DragUpdateEvent event) {
     super.onDragUpdate(event);
-    if (position.y < BoardConfig.boardHeight / 20 - height * 1.5) {
-      position += event.localDelta;
-    } else if (event.localDelta.y < 0 &&
-        (event.localDelta.x > 0 || event.localDelta.x < 0)) {
-      position += event.localDelta;
-    }
+    position += event.localDelta;
+    final double miny = -(BoardConfig.boardHeight / 2.3);
+    final double maxy = 0 - height;
+    final double minx = -BoardConfig.boardWidth / 2.2;
+    final double maxx = BoardConfig.boardWidth / 2.2;
+    position = Vector2(
+      position.x.clamp(minx, maxx),
+      position.y.clamp(miny, maxy),
+    );
   }
 
   @override
