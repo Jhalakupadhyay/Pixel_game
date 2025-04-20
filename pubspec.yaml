@@ -38,6 +38,7 @@ dependencies:
   flame: ^1.23.0
   flame_svg: ^1.11.4
   logger: ^2.5.0
+  flame_audio: ^2.10.7
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/audio/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

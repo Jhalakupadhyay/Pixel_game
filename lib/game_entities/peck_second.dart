@@ -7,6 +7,7 @@ import 'package:flame_svg/svg.dart';
 import 'package:flame_svg/svg_component.dart';
 import 'package:jungle_game/airhockey_game.dart';
 import 'package:jungle_game/configs/board_config.dart';
+import 'package:jungle_game/configs/sounds.dart';
 import 'package:jungle_game/game_entities/board.dart';
 import 'package:logger/logger.dart';
 
@@ -65,6 +66,7 @@ class PeckSecond extends PositionComponent
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
     if (other is Board) {
+      SoundsConfig.playAudio();
       if (position.y <= -BoardConfig.boardHeight / 2 + height) {
         position.y += 10;
       }
