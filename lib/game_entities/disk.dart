@@ -49,10 +49,10 @@ class Disk extends PositionComponent
       // Boundary bouncing - adjust these values to match your board size
       final halfWidth = size.x / 2;
       final halfHeight = size.y / 2;
-      final boardLeft = -BoardConfig.boardWidth / 2;
-      final boardRight = BoardConfig.boardWidth / 2;
+      final boardLeft = -BoardConfig.boardWidth / 2 - halfWidth * 0.8;
+      final boardRight = BoardConfig.boardWidth / 2 - halfWidth;
       final boardTop = -BoardConfig.boardHeight / 2;
-      final boardBottom = BoardConfig.boardHeight / 2;
+      final boardBottom = BoardConfig.boardHeight / 2 - halfHeight * 2;
 
       if (position.x - halfWidth < boardLeft) {
         position.x = boardLeft + halfWidth;
