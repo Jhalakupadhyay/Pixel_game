@@ -1,16 +1,3 @@
-# jungle_game
+# AIR HOCKEY
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+THIS IS A TEST APPLICATION THAT I DEVELOPED JUST TO GET MY HANDS ON THE FLUTTER FLAME AND SEE HOW ACTUALLY THE GAMES ARE BUILT ON FLUTTER. THIS IS NOT A FULLY FIMISHED GAME ITS JUST A PROJECT THAT HELPS ME UNDERSTAND THE DYNAMICS OF BUILDING A GAME IN FLUTTER.
